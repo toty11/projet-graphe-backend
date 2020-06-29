@@ -22,8 +22,17 @@ Groupe-II.1
 3. Importer dans phpmyadmin le fichier ```script-sql.sql``` situé à la racine du dossier 
 
 # Routes
+
 Le jeu de données contient trois matière : mathématiques, svt, français, quatre étudiant (id de 1 à 4).
+
+Les différentes routes de l'api :
 
 {nom de votre virtual host}/{matière} - Les notes de tous les élèves
 
 {nom de votre virtual host}/{matière}/{id étudiant} - Les notes que l'étudiant associé à l'id à obtenu
+
+Exemple: 
+
+graphe-api/mathématiques
+
+graphe-api/mathématiques/1
