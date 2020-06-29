@@ -40,4 +40,9 @@ return function (App $app) {
         $response->getBody()->write(getNotesEtudiant("Français",$args['id']));
         return $response;
     });
+
+    $app->get('/etudiants', function (Request $request, Response $response) {
+        $response->getBody()->write(getEtudiants());
+        return $response;
+    });
 };

@@ -25,3 +25,15 @@ function getNotesEtudiant($matiere, $id){
     
     return json_encode($data);
 }
+
+function getEtudiants(){
+    try{
+        global $bdd;
+        $response = $bdd->query("SELECT * from etudiant");
+        $data = $response->fetchAll(PDO::FETCH_ASSOC);
+    }catch(Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+    
+    return json_encode($data);
+}
