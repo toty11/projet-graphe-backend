@@ -11,13 +11,33 @@ use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 include '../fonction/data.php';
 
 return function (App $app) {
-    $app->options('/{routes:.*}', function (Request $request, Response $response) {
-        // CORS Pre-Flight OPTIONS Request Handler
+    $app->get('/mathematiques', function (Request $request, Response $response) {
+        $response->getBody()->write(getNotes("Mathématiques"));
         return $response;
     });
 
-    $app->get('/test/{id}', function (Request $request, Response $response, $args) {
-        $response->getBody()->write(test($args['id']));
+    $app->get('/mathematiques/{id}', function (Request $request, Response $response, $args) {
+        $response->getBody()->write(getNotesEtudiant("Mathématiques",$args['id']));
+        return $response;
+    });
+
+    $app->get('/svt', function (Request $request, Response $response) {
+        $response->getBody()->write(getNotes("SVT"));
+        return $response;
+    });
+
+    $app->get('/svt/{id}', function (Request $request, Response $response, $args) {
+        $response->getBody()->write(getNotesEtudiant("SVT",$args['id']));
+        return $response;
+    });
+
+    $app->get('/français', function (Request $request, Response $response) {
+        $response->getBody()->write(getNotes("Français"));
+        return $response;
+    });
+
+    $app->get('/français/{id}', function (Request $request, Response $response, $args) {
+        $response->getBody()->write(getNotesEtudiant("Français",$args['id']));
         return $response;
     });
 };
