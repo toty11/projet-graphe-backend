@@ -1,13 +1,14 @@
 # Backend projet graphe
 
 Groupe-II.1
-LECANU Nicolas
-JOSEPH-PARFAITE Thomas
+- LECANU Nicolas
+- JOSEPH-PARFAITE Thomas
 
 # Installation
 
-Placez le dossier dans le répertoire www de votre web server.
-Créez un virtual host
+1. Placez le dossier dans le répertoire www de votre web server.
+2. Créez un virtual host
+```
 <VirtualHost *:80>
 	ServerName graphe-api
 	DocumentRoot "c:/wamp64/www/projet-graphe-backend/public"
@@ -17,11 +18,12 @@ Créez un virtual host
 		Require local
 	</Directory>
 </VirtualHost>
-
-Importer dans phpmyadmin le fichier "script-sql.sql" situé à la racine du dossier 
+```
+3. Importer dans phpmyadmin le fichier ```script-sql.sql``` situé à la racine du dossier 
 
 # Routes
+Le jeu de données contient trois matière : mathématiques, svt, français, quatre étudiant (id de 1 à 4).
 
-Matière : mathématiques, svt, français
 {nom de votre virtual host}/{matière} - Les notes de tous les élèves
+
 {nom de votre virtual host}/{matière}/{id étudiant} - Les notes que l'étudiant associé à l'id à obtenu
