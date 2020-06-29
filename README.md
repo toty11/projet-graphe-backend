@@ -19,7 +19,7 @@ Groupe-II.1
 	</Directory>
 </VirtualHost>
 ```
-3. Importer dans phpmyadmin le fichier ```script-sql.sql``` situé à la racine du dossier 
+3. Importer dans phpmyadmin le fichier ```script-sql.sql``` situé à la racine du dossier, qui va créer la base dbgraphe ainsi que les tables etudiant et notes.
 
 # Routes
 
